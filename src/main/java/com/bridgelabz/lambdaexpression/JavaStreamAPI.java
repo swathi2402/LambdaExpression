@@ -62,5 +62,10 @@ public class JavaStreamAPI {
 		boolean anyEven = myList.stream().anyMatch(isEvenFunction);
 		System.out.println("Is all Even? :" + allEven);
 		System.out.println("Is any Even? :" + anyEven);
+		
+		List<Integer> sortedList = myList.stream()
+									.sorted((n1, n2) -> n2.compareTo(n1))
+									.collect(Collectors.toList());
+		System.out.println("Sorted List: " + sortedList);
 	}
 }
