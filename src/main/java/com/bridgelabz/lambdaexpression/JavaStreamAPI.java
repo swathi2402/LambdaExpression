@@ -1,6 +1,7 @@
 package com.bridgelabz.lambdaexpression;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -38,5 +39,17 @@ public class JavaStreamAPI {
 								.findFirst()
 								.orElse(null);
 		System.out.println("First Even Number: " + firstEven);
+		
+		Integer min = myList.stream()
+						.filter(isEvenFunction)
+						.min((n1, n2) -> n1 -n2)
+						.orElse(null);
+		System.out.println("Minimum Even Number: " + min);
+		
+		Integer max = myList.stream()
+						.filter(isEvenFunction)
+						.max(Comparator.comparing(Integer::intValue))
+						.orElse(null);
+		System.out.println("Maximun Even Number: " + max);
 	}
 }
