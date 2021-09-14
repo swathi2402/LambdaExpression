@@ -31,5 +31,12 @@ public class JavaStreamAPI {
 								.filter(isEvenFunction)
 								.collect(Collectors.toList());
 		System.out.println("Printing Even List: " + evenList);
+		
+		Integer firstEven = myList.stream()
+								.filter(isEvenFunction)
+								.peek(n -> System.out.println("Peek Even Number: " + n))
+								.findFirst()
+								.orElse(null);
+		System.out.println("First Even Number: " + firstEven);
 	}
 }
