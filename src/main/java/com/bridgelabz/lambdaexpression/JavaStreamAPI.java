@@ -57,5 +57,10 @@ public class JavaStreamAPI {
 		System.out.println("Sum of intergers: " + sum);
 		long count = myList.stream().count();
 		System.out.println("Average is: " + sum + "/" + count + " = " + sum/count);
+		
+		boolean allEven = myList.stream().allMatch(isEvenFunction);
+		boolean anyEven = myList.stream().anyMatch(isEvenFunction);
+		System.out.println("Is all Even? :" + allEven);
+		System.out.println("Is any Even? :" + anyEven);
 	}
 }
