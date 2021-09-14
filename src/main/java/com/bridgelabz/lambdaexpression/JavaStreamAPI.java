@@ -51,5 +51,11 @@ public class JavaStreamAPI {
 						.max(Comparator.comparing(Integer::intValue))
 						.orElse(null);
 		System.out.println("Maximun Even Number: " + max);
+		
+		Integer sum = myList.stream()
+						.reduce(0, Integer::sum);
+		System.out.println("Sum of intergers: " + sum);
+		long count = myList.stream().count();
+		System.out.println("Average is: " + sum + "/" + count + " = " + sum/count);
 	}
 }
